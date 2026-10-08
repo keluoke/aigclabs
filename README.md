@@ -1,6 +1,6 @@
 # AIGC Labs
 
-AIGC Labs 官网，展示 [ChessDB](https://chessdb.aigclabs.cc/) 与[歧路 Diverge](https://chromewebstore.google.com/detail/egiimjkekgiaimaagaljiclacljmdkmo?hl=zh-CN)。纯静态 HTML、CSS 和 JavaScript，不需要构建或安装依赖。
+AIGC Labs 官网，展示 [ChessDB](https://chessdb.aigclabs.cc/)、[歧路 Diverge](https://chromewebstore.google.com/detail/egiimjkekgiaimaagaljiclacljmdkmo?hl=zh-CN) 与 [NobelSciences](https://nobel.aigclabs.cc/)。页面本身是纯静态 HTML、CSS 和 JavaScript；Wrangler 仅用于部署。
 
 ## 本地预览
 
