@@ -5,11 +5,14 @@ AIGC Labs 官网，展示 [ChessDB](https://chessdb.aigclabs.cc/) 与[歧路 Div
 ## 本地预览
 
 ```sh
+cd public
 python3 -m http.server 4173
 ```
 
-打开 <http://localhost:4173/>。
+在 `public/` 目录下运行，再打开 <http://localhost:4173/>。
 
-## Cloudflare Pages
+## Cloudflare Worker
 
-使用 GitHub 仓库的 `main` 分支。Pages 选择无框架，构建命令留空（或使用 `exit 0`），构建输出目录为 `.`，因为 `index.html` 位于仓库根目录。目标自定义域名：`www.aigclabs.cc`。
+线上域名 `www.aigclabs.cc` 已绑定到同名 Worker `aigclabs`。`wrangler.jsonc` 指向 `public/` 中的静态文件，并保留现有自定义域名。GitHub 仓库的 `main` 分支用于生产部署。
+
+本地检查部署包：`npm ci && npx wrangler deploy --dry-run`。在 Cloudflare Worker 的 **Settings → Builds** 中连接 `keluoke/aigclabs`，生产分支选择 `main`，部署命令为 `npx wrangler deploy`。

@@ -1,0 +1,15 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "aigclabs",
+  "compatibility_date": "2026-10-03",
+  "assets": {
+    "directory": "./public",
+    "not_found_handling": "404-page"
+  },
+  "routes": [
+    {
+      "pattern": "www.aigclabs.cc",
+      "custom_domain": true
+    }
+  ]
+}

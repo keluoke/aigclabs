@@ -1,0 +1,12 @@
+{
+  "name": "aigclabs",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "check:deploy": "wrangler deploy --dry-run"
+  },
+  "devDependencies": {
+    "wrangler": "4.148.0"
+  }
+}
