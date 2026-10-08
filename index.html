@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f7f8f2" />
+    <title>AIGC Labs · 从数据到直觉，探索每一步</title>
+    <meta
+      name="description"
+      content="AIGC Labs 的国际象棋产品：ChessDB 中国国际象棋棋手数据库，以及歧路 Diverge Chrome 扩展。查找棋手与棋谱，用 Maia 3 和 Stockfish 19 理解赛后每一步。"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.aigclabs.cc/" />
+    <meta property="og:title" content="AIGC Labs · 从数据到直觉，探索每一步" />
+    <meta
+      property="og:description"
+      content="ChessDB 与歧路 Diverge，让数据有迹可循，让棋局值得思考。"
+    />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="main.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">跳到主要内容</a>
+    <svg
+      class="icon-library"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      <symbol id="arrow-up-right" viewBox="0 0 24 24">
+        <path d="M6 18 18 6M6 6h12v12" />
+      </symbol>
+      <symbol id="arrow-right" viewBox="0 0 24 24">
+        <path d="M4 12h16m-6-6 6 6-6 6" />
+      </symbol>
+      <symbol id="arrow-down" viewBox="0 0 24 24">
+        <path d="M12 4v16m-6-6 6 6 6-6" />
+      </symbol>
+      <symbol id="brand-mark" viewBox="0 0 32 32">
+        <path d="m5 25 11-19 11 19M10 18h12M16 6v8" />
+        <circle cx="16" cy="6" r="2" />
+        <circle cx="5" cy="25" r="2" />
+        <circle cx="27" cy="25" r="2" />
+      </symbol>
+      <symbol id="database-icon" viewBox="0 0 24 24">
+        <ellipse cx="12" cy="5" rx="8" ry="3" />
+        <path d="M4 5v14c0 4 16 4 16 0V5M4 12c0 4 16 4 16 0" />
+      </symbol>
+      <symbol id="diverge-icon" viewBox="0 0 24 24">
+        <path d="M12 21V11L5 4m7 7 7-7M3 9V3h6m6 0h6v6" />
+      </symbol>
+      <symbol id="chrome-icon" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="10" />
+        <circle cx="12" cy="12" r="4" />
+        <path d="M12 8h9M8.5 14 4 6m9.5 10-4 6" />
+      </symbol>
+    </svg>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="#" aria-label="AIGC Labs 首页"
+          ><span class="brand-logo"
+            ><svg><use href="#brand-mark" /></svg></span
+          ><span
+            >AIGC<span class="brand-light"> Labs</span
+            ><span class="brand-dot">.</span></span
+          ></a
+        >
+        <nav id="site-navigation" class="navigation" aria-label="主导航">
+          <a href="#projects" class="nav-link">我们的项目</a
+          ><a href="#approach" class="nav-link">探索方向</a
+          ><a href="#about" class="nav-link">关于实验室</a>
+        </nav>
+        <a class="header-cta" href="#projects"
+          >发现产品 <svg class="icon"><use href="#arrow-up-right" /></svg
+        ></a>
+        <button
+          class="menu-toggle"
+          id="menu-toggle"
+          aria-controls="site-navigation"
+          aria-expanded="false"
+          aria-label="打开导航"
+        >
+          <span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero container" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <div class="eyebrow">
+            <span class="status-dot"></span> 一个关于数据、AI 与棋的实验室
+          </div>
+          <h1 id="hero-title">
+            从数据到直觉，<br />探索<span class="highlight"
+              >每一步<svg viewBox="0 0 320 20" aria-hidden="true">
+                <path d="M3 14Q151-4 314 9" /></svg></span
+            >。
+          </h1>
+          <p class="hero-description">
+            让散落的数据连成线，让复杂的棋局被理解。<br
+              class="desktop-break"
+            />我们用 AI 和开放数据，做真正有用的国际象棋工具。
+          </p>
+          <div class="hero-actions">
+            <a class="button button-dark" href="#projects"
+              >探索我们的项目
+              <svg class="icon"><use href="#arrow-up-right" /></svg></a
+            ><a class="text-link" href="#about"
+              >认识 AIGC Labs <svg class="icon"><use href="#arrow-right" /></svg
+            ></a>
+          </div>
+          <div class="hero-note">
+            <span class="mini-board" aria-hidden="true"></span
+            ><span>以国际象棋为起点，保持对智能的好奇。</span>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="visual-topline">
+            <span>THE NEXT MOVE</span><span class="visual-plus">＋</span>
+          </div>
+          <img
+            class="hero-art"
+            src="assets/next-move.svg"
+            alt="一枚骑士立在绿色棋盘上，两条不同的路径向前延伸，象征人类直觉与引擎研判。"
+            width="620"
+            height="510"
+            fetchpriority="high"
+          />
+          <div class="visual-caption">
+            <span><i class="dot-lime"></i> 人类直觉</span
+            ><span><i class="dot-green"></i> 引擎研判</span
+            ><span class="visual-caption-note">不同视角，同一份好奇。</span>
+          </div>
+        </div>
+      </section>
+
+      <div class="chapter-bar container">
+        <span>BUILT FOR THE CURIOUS.</span
+        ><span>数据有迹可循 · 思考不止一步</span
+        ><a href="#projects" aria-label="向下查看项目"
+          ><svg class="icon"><use href="#arrow-down" /></svg
+        ></a>
+      </div>
+
+      <section
+        class="projects container"
+        id="projects"
+        aria-labelledby="projects-title"
+      >
+        <div class="section-heading">
+          <div>
+            <div class="section-kicker">01 / OUR PROJECTS</div>
+            <h2 id="projects-title">好奇心，落在产品里。</h2>
+          </div>
+          <p>
+            从认识一位棋手，到理解一个选择。<br />两款工具，连接数据与棋盘。
+          </p>
+        </div>
+        <div class="project-grid">
+          <article class="project-card chessdb-card">
+            <div class="project-art database-art" aria-hidden="true">
+              <div class="art-heading">
+                <span class="art-label">CHESSDB / 中国国际象棋棋手数据库</span
+                ><span class="art-index">01</span>
+              </div>
+              <div class="database-window">
+                <div class="window-bar">
+                  <div class="window-dots"><i></i><i></i><i></i></div>
+                  <span>chessdb.aigclabs.cc</span><span>↗</span>
+                </div>
+                <div class="database-content">
+                  <div class="search-mock">
+                    <svg class="icon"><use href="#database-icon" /></svg
+                    ><span>一位棋手，一份完整的故事</span><span>⌕</span>
+                  </div>
+                  <div class="record-types">
+                    <span class="selected">棋手档案</span><span>赛事记录</span
+                    ><span>对局棋谱</span>
+                  </div>
+                  <div class="data-record">
+                    <div class="record-avatar">♔</div>
+                    <div class="record-body">
+                      <span class="record-title">连接每一个棋手的足迹</span
+                      ><span class="record-subtitle"
+                        >姓名 · FIDE ID · 等级分 · 赛事</span
+                      >
+                      <div class="record-lines"><i></i><i></i><i></i></div>
+                    </div>
+                    <svg class="icon"><use href="#arrow-up-right" /></svg>
+                  </div>
+                  <div class="database-bottom">
+                    <span
+                      ><i class="status-dot"></i> 让每一局棋，都有迹可循</span
+                    ><span>OPEN DATA</span>
+                  </div>
+                </div>
+              </div>
+              <div class="art-grid-decoration"></div>
+            </div>
+            <div class="project-content">
+              <div class="project-meta">
+                <span class="product-type"
+                  ><svg class="icon"><use href="#database-icon" /></svg>
+                  开放数据平台</span
+                ><span class="product-status"
+                  ><i class="status-dot"></i> 已上线</span
+                >
+              </div>
+              <h3>ChessDB <span>中国国际象棋棋手数据库</span></h3>
+              <p>
+                把分散的棋手、赛事与棋谱连在一起。查找棋手档案，追踪等级分，回放已归档的对局，让每一份记录都有出处。
+              </p>
+              <ul class="feature-tags" aria-label="ChessDB 功能">
+                <li>棋手与赛事检索</li>
+                <li>PGN 棋谱回放</li>
+                <li>开放数据接口</li>
+              </ul>
+              <div class="project-footer">
+                <a
+                  class="project-link"
+                  href="https://chessdb.aigclabs.cc/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >进入 ChessDB
+                  <svg class="icon"><use href="#arrow-up-right" /></svg></a
+                ><span class="project-domain">chessdb.aigclabs.cc</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card diverge-card">
+            <div class="project-art diverge-art" aria-hidden="true">
+              <div class="art-heading">
+                <span class="art-label">DIVERGE / HUMAN × ENGINE</span
+                ><span class="art-index">02</span>
+              </div>
+              <div class="diverge-diagram">
+                <svg viewBox="0 0 540 210" class="fork-diagram">
+                  <defs>
+                    <linearGradient id="human-path" x1="0" y1="1" x2="0" y2="0">
+                      <stop stop-color="#647865" />
+                      <stop offset="1" stop-color="#d5ef86" />
+                    </linearGradient>
+                  </defs>
+                  <path
+                    class="diagram-grid"
+                    d="M0 42h540M0 84h540M0 126h540M0 168h540M54 0v210M108 0v210M162 0v210M216 0v210M270 0v210M324 0v210M378 0v210M432 0v210M486 0v210"
+                  />
+                  <path
+                    class="path-human"
+                    d="M270 192v-53c0-22-17-39-39-39h-85c-22 0-40-18-40-40V55"
+                  />
+                  <path
+                    class="path-engine"
+                    d="M270 192v-53c0-22 17-39 39-39h85c22 0 40-18 40-40V55"
+                  />
+                  <path class="head-human" d="m94 67 12-12 12 12" />
+                  <path class="head-engine" d="m422 67 12-12 12 12" />
+                  <circle cx="270" cy="190" r="8" fill="#f3f6ea" />
+                  <circle
+                    cx="270"
+                    cy="190"
+                    r="17"
+                    fill="none"
+                    stroke="#f3f6ea"
+                    stroke-opacity=".15"
+                  /></svg
+                ><span class="engine-label human-label"
+                  >Maia 3<small>人类会怎么走</small></span
+                ><span class="engine-label machine-label"
+                  >Stockfish 19<small>引擎如何判断</small></span
+                ><span class="diagram-origin">同一个局面，两种视角。</span>
+              </div>
+              <div class="diverge-art-bottom">
+                <span class="diverge-wordmark"
+                  ><svg class="icon"><use href="#diverge-icon" /></svg> 歧路
+                  <span>DIVERGE</span></span
+                ><span class="art-mini-label">UNDERSTAND THE DIFFERENCE.</span>
+              </div>
+            </div>
+            <div class="project-content">
+              <div class="project-meta">
+                <span class="product-type"
+                  ><svg class="icon"><use href="#chrome-icon" /></svg> Chrome
+                  扩展</span
+                ><span class="product-status"
+                  ><i class="status-dot"></i> 已上架</span
+                >
+              </div>
+              <h3>歧路 <span class="diverge-title">Diverge</span></h3>
+              <p>
+                人类会怎么想，机器会怎么走？将 Maia 3 的人类直觉与 Stockfish 19
+                的引擎研判并排呈现，在赛后复盘中读懂每一个分歧。
+              </p>
+              <ul class="feature-tags" aria-label="歧路功能">
+                <li>双引擎对照</li>
+                <li>浏览器本地推理</li>
+                <li>Lichess / Chess.com</li>
+              </ul>
+              <div class="project-footer">
+                <a
+                  class="project-link"
+                  href="https://chromewebstore.google.com/detail/egiimjkekgiaimaagaljiclacljmdkmo?hl=zh-CN"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >在 Chrome 中添加
+                  <svg class="icon"><use href="#arrow-up-right" /></svg></a
+                ><span class="fair-play-note">对局中锁定 · 赛后解锁</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section
+        class="approach container"
+        id="approach"
+        aria-labelledby="approach-title"
+      >
+        <div class="approach-intro">
+          <div class="section-kicker">02 / HOW WE THINK</div>
+          <h2 id="approach-title">工具向前，<br />思考留给你。</h2>
+          <p>我们关心的不只是答案，<br />还有理解答案的过程。</p>
+        </div>
+        <div class="principles">
+          <article>
+            <span class="principle-number">01</span>
+            <div>
+              <h3>数据，要有来处。</h3>
+              <p>
+                把分散的记录整理成可查阅、可追溯的数据，让探索从可信的信息开始。
+              </p>
+            </div>
+            <svg class="icon"><use href="#database-icon" /></svg>
+          </article>
+          <article>
+            <span class="principle-number">02</span>
+            <div>
+              <h3>智能，要带来理解。</h3>
+              <p>
+                让人类直觉与引擎判断相互映照。从“哪一步更好”，走向“为什么这样走”。
+              </p>
+            </div>
+            <svg class="icon"><use href="#diverge-icon" /></svg>
+          </article>
+          <article>
+            <span class="principle-number">03</span>
+            <div>
+              <h3>选择，始终属于你。</h3>
+              <p>
+                工具服务于学习与复盘。尊重公平竞技，也尊重每个人独立思考的空间。
+              </p>
+            </div>
+            <svg class="icon"><use href="#arrow-up-right" /></svg>
+          </article>
+        </div>
+      </section>
+
+      <section class="about container" id="about" aria-labelledby="about-title">
+        <div class="about-panel">
+          <div class="about-copy">
+            <div class="section-kicker">03 / ABOUT THE LAB</div>
+            <h2 id="about-title">小小实验室，<br />持续探索的好奇心。</h2>
+            <p>
+              AIGC Labs 关注 AI
+              与垂直领域数据的交汇。我们从国际象棋出发，把对数据、博弈和人类决策的兴趣，变成可以亲手使用的产品。
+            </p>
+            <a class="text-link" href="#projects"
+              >看看我们正在做的事
+              <svg class="icon"><use href="#arrow-right" /></svg
+            ></a>
+          </div>
+          <div class="about-visual" aria-hidden="true">
+            <span class="about-bracket">[</span
+            ><svg><use href="#brand-mark" /></svg
+            ><span class="about-bracket">]</span
+            ><span class="about-visual-caption">ALWAYS EXPLORING.</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer container">
+      <div class="footer-top">
+        <a class="brand" href="#" aria-label="返回首页"
+          ><span class="brand-logo"
+            ><svg><use href="#brand-mark" /></svg></span
+          ><span
+            >AIGC<span class="brand-light"> Labs</span
+            ><span class="brand-dot">.</span></span
+          ></a
+        ><span class="footer-tagline">下一步，值得好奇。</span
+        ><a class="back-top" href="#"
+          >回到顶部 <svg class="icon"><use href="#arrow-up-right" /></svg
+        ></a>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="current-year">2026</span> AIGC Labs</span
+        ><span>数据 · 直觉 · 更多可能</span>
+        <div>
+          <a
+            href="https://chessdb.aigclabs.cc/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >ChessDB <svg class="icon"><use href="#arrow-up-right" /></svg></a
+          ><a
+            href="https://chromewebstore.google.com/detail/egiimjkekgiaimaagaljiclacljmdkmo?hl=zh-CN"
+            target="_blank"
+            rel="noopener noreferrer"
+            >歧路 Diverge <svg class="icon"><use href="#arrow-up-right" /></svg
+          ></a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
